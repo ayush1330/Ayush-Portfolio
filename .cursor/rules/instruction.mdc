@@ -1,0 +1,4 @@
+---
+description: when I ask agent to push my code to github, it should update the ReadME file
+alwaysApply: false
+---
