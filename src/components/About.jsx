@@ -72,9 +72,11 @@ const About = () => {
       </div>
 
       <p ref={paragraphRef} className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I'm a skilled software developer with experience in  JavaScript, and expertise in frameworks 
-        like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, 
-        scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
+        Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, and business intelligence, 
+        specializing in large language models (LLMs), agentic workflows, and data-driven product development. 
+        Proven success in building multi-agent systems and LLM-powered automation pipelines that improve operational 
+        efficiency and user engagement. Adept in deploying AI solutions using LangChain, Hugging Face, and cloud-native 
+        tools across domains including education tech, market research, and digital marketing.
       </p>
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-10">

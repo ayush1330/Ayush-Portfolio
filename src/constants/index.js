@@ -59,111 +59,104 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Full-Stack Developer",
+    title: "ML Engineer",
     icon: web,
   },
   {
-    title: "Frontend Developer",
+    title: "AI Engineer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Data Scientist",
     icon: backend,
   },
   {
-    title: "Ui UX Designer",
+    title: "LLM Specialist",
     icon: creator,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "Python",
+    icon: html, // Using HTML icon as placeholder for Python
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "PyTorch",
+    icon: css, // Using CSS icon as placeholder for PyTorch
   },
   {
-    name: "JavaScript",
+    name: "LangChain",
     icon: javascript,
   },
   {
-    name: "React JS",
+    name: "OpenAI",
     icon: reactjs,
   },
   {
-    name: "gsap",
+    name: "Docker",
     icon: gsap,
   },
   {
-    name: "framer",
+    name: "Kubernetes",
     icon: framer,
-  },
-
- 
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Material Ui",
-    icon: mui,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "Express Js",
-    icon: express,
   },
   {
     name: "AWS",
     icon: aws,
   },
   {
+    name: "Azure ML",
+    icon: figma,
+  },
+  {
+    name: "PostgreSQL",
+    icon: redux,
+  },
+  {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "MySql",
-    icon: mysql,
+    name: "FastAPI",
+    icon: mui,
   },
-
   {
-    name: "git",
+    name: "Apache Spark",
+    icon: nodejs,
+  },
+  {
+    name: "TensorBoard",
+    icon: express,
+  },
+  {
+    name: "GCP Vertex AI",
+    icon: threejs,
+  },
+  {
+    name: "Git",
     icon: git,
   },
- 
-
+  {
+    name: "Terraform",
+    icon: tailwind,
+  },
 ];
 
 const experiences = [
   {
-    title: "Full-Stack Developer",
-    company_name: "Tekisky",
-    icon: tekisky,
+    title: "Senior ML Engineer",
+    company_name: "Grand View Research US",
+    icon: tekisky, // Using existing icon as placeholder
     iconBg: "#383E56",
-    date: "Jan 2023 - present",
+    date: "Sep 2020 - Dec 2023",
     points: [
-      "Developing and maintaining web applications using MERN technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket and training deep learning models with hyperparameter tuning (PyTorch) and monitoring (via TensorBoard).",
+      "Developed AI Image Culling software, implementing face quality algorithm (MediaPipe) and removing duplicates, blurriness, background removal and blinking images.",
+      "Architected researcher platform and developed custom-built Federated Machine Learning and Analytics Python packages.",
+      "Managed Kubernetes clusters for containerizing ML models and deploying them to production, reducing deployment time by 80%.",
+      "Designed automated Facebook ad system with GPT-3, boosting engagement rates by 35%.",
+      "Developed customer segmentation using K-Means clustering with Python and Scikit-learn, improving marketing effectiveness by 20%.",
     ],
   },
 ];
@@ -171,98 +164,101 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Huzaif proved me wrong.",
-    name: "MD Mustaqeem",
-    designation: "Ecommerce",
-    company: "QuickMart",
+      "Ayush's expertise in LLMs and AI automation helped us build a sophisticated research assistant that significantly improved our workflow efficiency.",
+    name: "[PLACEHOLDER]",
+    designation: "Research Director",
+    company: "[PLACEHOLDER COMPANY]",
     image: firstTestimonial,
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Huzaif does.",
-    name: "Abdul Raheman",
-    designation: "Ecommerce Business",
-    company: "justbuyz",
+      "The Auto ML platform Ayush developed reduced our model deployment time by 80% and improved our research capabilities tremendously.",
+    name: "[PLACEHOLDER]",
+    designation: "Data Science Manager",
+    company: "[PLACEHOLDER COMPANY]",
     image: secondTestimonial,
   },
   {
     testimonial:
-      "After Huzaif optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "James Wang",
+      "Ayush's AI solutions and machine learning expertise have been instrumental in driving our business growth and operational efficiency.",
+    name: "[PLACEHOLDER]",
     designation: "CTO",
-    company: "456 Enterprises",
+    company: "[PLACEHOLDER COMPANY]",
     image: thirdTestimonial,
   },
 ];
 
 const projects = [
   {
-    name: "Tekisky Mart",
+    name: "AI Research Assistant with RAG & Agents",
     description:
-      "Tekisky Mart is a web-based platform that allows users to search, explore, and purchase a wide range of products from various providers, offering a seamless and efficient shopping experience.",
+      "Developed a smart assistant using LangChain, LangGraph, OpenAI LLMs, and vector search to answer complex queries with agent-based reasoning and document retrieval. Built custom workflows with LlamaIndex and ReAct agents.",
     tags: [
       {
-        name: "react",
+        name: "LangChain",
         color: "blue-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "OpenAI",
         color: "white-text-gradient",
       },
       {
-        name: "node",
+        name: "Python",
         color: "pink-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "RAG",
         color: "green-text-gradient",
       },
- 
     ],
     image: project2,
     source_code_link: "https://github.com/",
   },
   {
-    name: "GearXpert",
+    name: "Auto ML Orchestration Platform",
     description:
-      "GearXpert is your ultimate destination for premium auto parts and accessories, Whether you're an automobile enthusiast or a professional, find everything you need to upgrade, repair.",
+      "Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket, training deep learning models with hyperparameter tuning (PyTorch) and monitoring via TensorBoard.",
     tags: [
       {
-        name: "react",
+        name: "PyTorch",
         color: "blue-text-gradient",
       },
       {
-        name: "emailJs",
+        name: "TensorBoard",
         color: "green-text-gradient",
       },
       {
-        name: "Gsap",
+        name: "AWS S3",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "white-text-gradient",
       },
     ],
     image: gearXpert,
     source_code_link: "https://github.com/",
   },
   {
-    name: "GoGroove-Ecommerce",
+    name: "Synthetic Data Generator with LLMs",
     description:
-      "Go-Groove is your ultimate destination for premium products across various categories. Whether you're a savvy shopper or a professional, enhance, and simplify your lifestyle—all in one place!",
+      "Built a tool using OpenAI's LLMs to generate schema-aligned synthetic data with label conditioning for ML model training. Deployed Llama 3 90b model on Google Vertex AI for domain-specific synthetic data generation.",
     tags: [
       {
-        name: "react",
+        name: "OpenAI",
         color: "blue-text-gradient",
       },
       {
-        name: "express",
+        name: "Llama 3",
         color: "white-text-gradient",
       },
       {
-        name: "node",
+        name: "GCP Vertex AI",
         color: "green-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
+        name: "Python",
+        color: "pink-text-gradient",
       },
     ],
     image: project3,
@@ -271,3 +267,5 @@ const projects = [
 ];
 
 export { services, technologies, experiences, testimonials, projects };
+
+
