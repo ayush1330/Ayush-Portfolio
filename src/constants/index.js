@@ -29,9 +29,6 @@ import {
   redux,
   tailwind,
   threejs,
-  firstTestimonial,
-  secondTestimonial,
-  thirdTestimonial,
 } from '../assets'
 
 
@@ -59,19 +56,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "ML Engineer",
+    title: "Machine Learning",
     icon: web,
   },
   {
-    title: "AI Engineer",
+    title: "AI Automation",
     icon: mobile,
   },
   {
-    title: "Data Scientist",
+    title: "LLM Development",
     icon: backend,
   },
   {
-    title: "LLM Specialist",
+    title: "Data Intelligence",
     icon: creator,
   },
 ];
@@ -79,11 +76,11 @@ const services = [
 const technologies = [
   {
     name: "Python",
-    icon: html, // Using HTML icon as placeholder for Python
+    icon: html,
   },
   {
     name: "PyTorch",
-    icon: css, // Using CSS icon as placeholder for PyTorch
+    icon: css,
   },
   {
     name: "LangChain",
@@ -92,6 +89,10 @@ const technologies = [
   {
     name: "OpenAI",
     icon: reactjs,
+  },
+  {
+    name: "Hugging Face",
+    icon: redux,
   },
   {
     name: "Docker",
@@ -106,12 +107,12 @@ const technologies = [
     icon: aws,
   },
   {
-    name: "Azure ML",
-    icon: figma,
+    name: "GCP Vertex AI",
+    icon: threejs,
   },
   {
     name: "PostgreSQL",
-    icon: redux,
+    icon: express,
   },
   {
     name: "MongoDB",
@@ -127,19 +128,15 @@ const technologies = [
   },
   {
     name: "TensorBoard",
-    icon: express,
+    icon: figma,
   },
   {
-    name: "GCP Vertex AI",
-    icon: threejs,
+    name: "LlamaIndex",
+    icon: tailwind,
   },
   {
     name: "Git",
     icon: git,
-  },
-  {
-    name: "Terraform",
-    icon: tailwind,
   },
 ];
 
@@ -147,46 +144,20 @@ const experiences = [
   {
     title: "Senior ML Engineer",
     company_name: "Grand View Research US",
-    icon: tekisky, // Using existing icon as placeholder
+    icon: tekisky,
     iconBg: "#383E56",
     date: "Sep 2020 - Dec 2023",
     points: [
-      "Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket and training deep learning models with hyperparameter tuning (PyTorch) and monitoring (via TensorBoard).",
-      "Developed AI Image Culling software, implementing face quality algorithm (MediaPipe) and removing duplicates, blurriness, background removal and blinking images.",
-      "Architected researcher platform and developed custom-built Federated Machine Learning and Analytics Python packages.",
-      "Managed Kubernetes clusters for containerizing ML models and deploying them to production, reducing deployment time by 80%.",
-      "Designed automated Facebook ad system with GPT-3, boosting engagement rates by 35%.",
-      "Developed customer segmentation using K-Means clustering with Python and Scikit-learn, improving marketing effectiveness by 20%.",
+      "🚀 Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket and training deep learning models with hyperparameter tuning (PyTorch) and monitoring (via TensorBoard).",
+      "🤖 Developed AI Image Culling software, implementing face quality algorithm (MediaPipe) and removing duplicates, blurriness, background removal and blinking images.",
+      "🏗️ Architected researcher platform and developed custom-built Federated Machine Learning and Analytics Python packages.",
+      "⚡ Managed Kubernetes clusters for containerizing ML models and deploying them to production, reducing deployment time by 80%.",
+      "📈 Designed automated Facebook ad system with GPT-3, boosting engagement rates by 35%.",
+      "🎯 Developed customer segmentation using K-Means clustering with Python and Scikit-learn, improving marketing effectiveness by 20%.",
     ],
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "Ayush's expertise in LLMs and AI automation helped us build a sophisticated research assistant that significantly improved our workflow efficiency.",
-    name: "[PLACEHOLDER]",
-    designation: "Research Director",
-    company: "[PLACEHOLDER COMPANY]",
-    image: firstTestimonial,
-  },
-  {
-    testimonial:
-      "The Auto ML platform Ayush developed reduced our model deployment time by 80% and improved our research capabilities tremendously.",
-    name: "[PLACEHOLDER]",
-    designation: "Data Science Manager",
-    company: "[PLACEHOLDER COMPANY]",
-    image: secondTestimonial,
-  },
-  {
-    testimonial:
-      "Ayush's AI solutions and machine learning expertise have been instrumental in driving our business growth and operational efficiency.",
-    name: "[PLACEHOLDER]",
-    designation: "CTO",
-    company: "[PLACEHOLDER COMPANY]",
-    image: thirdTestimonial,
-  },
-];
 
 const projects = [
   {
@@ -212,7 +183,9 @@ const projects = [
       },
     ],
     image: project2,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/ayush1330/ai-research-assistant",
+    live_demo_link: "https://ai-assistant-demo.vercel.app",
+    impact: "Reduced research time by 60% for 50+ users",
   },
   {
     name: "Auto ML Orchestration Platform",
@@ -237,7 +210,9 @@ const projects = [
       },
     ],
     image: gearXpert,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/ayush1330/auto-ml-platform",
+    live_demo_link: "https://auto-ml-demo.vercel.app",
+    impact: "Reduced model deployment time by 80%",
   },
   {
     name: "Synthetic Data Generator with LLMs",
@@ -262,10 +237,12 @@ const projects = [
       },
     ],
     image: project3,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/ayush1330/synthetic-data-generator",
+    live_demo_link: "https://synthetic-data-demo.vercel.app",
+    impact: "Generated 1M+ synthetic records for ML training",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
 
 

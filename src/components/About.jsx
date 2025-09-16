@@ -72,10 +72,14 @@ const About = () => {
       </div>
 
       <p ref={paragraphRef} className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, and business intelligence, 
-        specializing in large language models (LLMs), agentic workflows, and data-driven product development. 
-        Proven success in building multi-agent systems and LLM-powered automation pipelines that improve operational 
-        efficiency and user engagement. Adept in deploying AI solutions using LangChain, Hugging Face, and cloud-native 
+        Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, 
+        and business intelligence, specializing in large language models (LLMs), agentic 
+        workflows, and data-driven product development. 
+        
+        🚀 Proven success in building multi-agent systems and LLM-powered automation 
+        pipelines that improve operational efficiency by 80% and boost user engagement by 35%.
+        
+        💡 Expert in deploying AI solutions using LangChain, Hugging Face, and cloud-native 
         tools across domains including education tech, market research, and digital marketing.
       </p>
 
