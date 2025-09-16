@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -34,20 +35,32 @@ const Navbar = () => {
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
-          to='/'
-          className='flex items-center gap-2'
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Ayush &nbsp;
-            <span className='sm:block hidden'> | AI Engineer</span>
-          </p>
-        </Link>
+        <div className='flex items-center gap-4'>
+          <a
+            href="https://github.com/ayush1330"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-secondary transition-colors"
+          >
+            <FaGithub size={20} />
+          </a>
+          <a
+            href="https://x.com/ayushrajput08?s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-secondary transition-colors"
+          >
+            <FaXTwitter size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ayush-singh-1330c/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-secondary transition-colors"
+          >
+            <FaLinkedin size={20} />
+          </a>
+        </div>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (

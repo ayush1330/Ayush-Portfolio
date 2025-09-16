@@ -20,8 +20,10 @@ const Hero = () => {
             Hi, I'm <span className='text-[#00d4ff]'>Ayush</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Building the future with AI & Machine Learning <br/>
-            Transforming data into intelligent solutions
+            I'm a people person from a small town, with a big-picture mindset. <br/>
+            My passion lies in Agentic AI application, coupled with a dash of common sense, <br/>
+            to craft simple yet effective solutions for complex problems. <br/>
+            Working hard to better myself everyday and will take on every project I have time for.
           </p>
         </div>
       </div>
