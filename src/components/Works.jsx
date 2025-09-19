@@ -1,145 +1,93 @@
-import React, { useEffect, useRef } from "react";
-import { Tilt } from "react-tilt";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import React from "react";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import ScrollAnimation from "./ScrollAnimation";
 
 const ProjectCard = ({
-  index,
   name,
   description,
   tags,
-  image,
   source_code_link,
+  live_demo_link,
+  impact,
+  buttonType,
 }) => {
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const el = cardRef.current;
-
-    // ScrollTrigger for animating project cards with stagger
-    gsap.fromTo(
-      el,
-      {
-        opacity: 0,
-        y: 100, // Start off-screen
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",  // Trigger when the top of the element hits the bottom of the viewport
-          end: "top center",    // End when the top reaches the center of the viewport
-          scrub: true,          // Smoothly sync scroll and animation
-          markers: false,       // Set to `true` to see debug markers
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div ref={cardRef}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt="project_image"
-            className="w-full h-full object-cover object-left rounded-2xl"
-          />
-
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+    <div className="rounded-lg shadow-sm border border-accent/10 hover:shadow-lg hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+      <div className="p-6">
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={() => window.open(source_code_link, "_blank")}
+            className="bg-primary text-secondary px-4 py-2 rounded-lg hover:bg-gray-800 hover:scale-105 transition-all duration-200 flex items-center gap-2 text-sm font-medium shadow-sm hover:shadow-md cursor-pointer"
+          >
+            <img src={github} alt="GitHub" className="w-4 h-4" />
+            Code
+          </button>
+          {live_demo_link && (
+            <button
+              onClick={() => window.open(live_demo_link, "_blank")}
+              className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 hover:scale-105 transition-all duration-200 text-sm font-medium shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2"
             >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              {buttonType || "Live Demo"}
+            </button>
+          )}
+        </div>
+
+        <h3 className="typography-h4 text-body mb-3">{name}</h3>
+        <p className="typography-body text-accent mb-4 leading-relaxed">{description}</p>
+        
+        {impact && (
+          <div className="mb-4 p-3 bg-accent-subtle rounded-md border-l-4 border-primary">
+            <p className="typography-caption text-accent-dark font-medium">Impact: {impact}</p>
           </div>
-        </div>
+        )}
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p
+            <span
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className="px-2 py-1 bg-accent-subtle text-accent-dark rounded-md typography-caption text-xs"
             >
-              #{tag.name}
-            </p>
+              {tag.name}
+            </span>
           ))}
         </div>
-      </Tilt>
+      </div>
     </div>
   );
 };
 
 const Works = () => {
-  useEffect(() => {
-    // Stagger effect for project cards
-    gsap.fromTo(
-      ".project-card", // Select all project cards
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1, // Stagger delay of 0.3 seconds between each card
-        scrollTrigger: {
-          trigger: ".works-container",
-          start: "top bottom",  // Trigger when the top of the container reaches the bottom
-          end: "top center",
-          scrub: true,
-          markers: false, // Set to true to see debug markers
-        },
-      }
-    );
-  }, []);
-
   return (
     <>
-      <div>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </div>
+      <ScrollAnimation>
+        <div className="mb-3">
+          <p className={styles.heading2}>Projects</p>
+        </div>
+      </ScrollAnimation>
 
-      <div className="w-full flex">
-        <p className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
-          Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
-        </p>
-      </div>
+      <ScrollAnimation delay={200}>
+        <div className="mb-12">
+          <p className="typography-body text-accent max-w-3xl leading-relaxed">
+            Following projects showcase my skills and experience through real-world examples of my work. 
+            Each project is briefly described with links to code repositories and live demos. It reflects 
+            my ability to solve complex problems, work with different technologies, and manage projects effectively.
+          </p>
+        </div>
+      </ScrollAnimation>
 
-      <div className="works-container mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5">
+      <ScrollAnimation delay={400}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={`project-${index}`} className="project-card">
-            <ProjectCard index={index} {...project} />
-          </div>
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
-      </div>
+        </div>
+      </ScrollAnimation>
     </>
   );
 };

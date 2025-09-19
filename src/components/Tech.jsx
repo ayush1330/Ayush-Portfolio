@@ -1,51 +1,35 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { styles } from "../styles";
+import ScrollAnimation from "./ScrollAnimation";
 
 const Tech = () => {
-  useEffect(() => {
-    gsap.fromTo(
-      ".tech-icon",  
-      {
-        opacity: 0,
-        y: 80
-      },
-      {
-
-
-
-        
-        opacity: 1,
-        y: 0,
-        duration: 2.5,
-        stagger: 0.1, 
-        scrollTrigger: {
-          trigger: ".tech-icons-wrapper", 
-          start: "top 80%", 
-          end: "bottom 70%", 
-          scrub: true, 
-        },
-      }
-    );
-  }, []);
-
   return (
     <section>
-      <div className="tech-icons-wrapper flex flex-row flex-wrap justify-center gap-10">
+      <ScrollAnimation>
+        <div className="mb-8">
+          <p className={styles.heading2}>Tools and frameworks</p>
+        </div>
+      </ScrollAnimation>
+      
+      <ScrollAnimation delay={200}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
         {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
+          <div 
+            key={technology.name} 
+            className="flex flex-col items-center justify-center p-4 rounded-lg"
+          >
             <img
               src={technology.icon}
               alt={technology.name}
-              className="tech-icon w-full h-full object-contain"
+              className="w-20 h-20 object-contain mb-2"
             />
+            <span className="text-xs text-accent text-center">{technology.name}</span>
           </div>
         ))}
-      </div>
+        </div>
+      </ScrollAnimation>
     </section>
   );
 };

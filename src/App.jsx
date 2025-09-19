@@ -1,27 +1,31 @@
-import { BrowserRouter } from "react-router-dom";
-
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
-import Footer from "./components/Footer";
+import { Hero, Navbar } from "./components";
+import { 
+  LazyAbout, 
+  LazyContact, 
+  LazyExperience, 
+  LazySkills,
+  LazyTech, 
+  LazyWorks, 
+  LazyFooter 
+} from "./components/LazyComponent";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <StarsCanvas />
-        <div className='relative'>
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <div className='relative z-0'>
-          <Contact />
-          <Footer/>
-        </div>
+    <div className='relative z-0 bg-primary'>
+      <div className='relative'>
+        <Navbar />
+        <Hero />
       </div>
-    </BrowserRouter>
+      <LazyAbout />
+      <LazyExperience />
+      <LazyWorks />
+      <LazySkills />
+      <LazyTech />
+      <div className='relative z-0'>
+        <LazyContact />
+        <LazyFooter/>
+      </div>
+    </div>
   );
 }
 

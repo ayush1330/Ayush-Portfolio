@@ -1,6 +1,5 @@
 
 import {
-  logo,
   backend,
   creator,
   mobile,
@@ -8,41 +7,34 @@ import {
   github,
   menu,
   close,
-  css,
   gearXpert,
   project2,
   project3,
-  mysql,
-  express,
+  apache_spark,
   aws,
-  mui,
-  
-  gsap,
-  framer,
-  figma,
+  docker,
+  fastapi,
   git,
-  html,
-  javascript,
+  huggingface,
+  kubernetes,
+  langchain,
   mongodb,
-  nodejs,
-  reactjs,
-  redux,
-  tailwind,
-  threejs,
+  openai,
+  postgresql,
+  python,
+  pytorch,
+  tensorflow,
+  typescript,
+  vertex_ai,
 } from '../assets'
-
 
 // Import Tekisky separately
 import tekisky from "../assets/company/tekisky.png";
 
-
 export const navLinks = [
-
-
   {
     id: "about",
     title: "About",
-    
   },
   {
     id: "work",
@@ -56,19 +48,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Machine Learning",
+    title: "AI Engineering",
     icon: web,
   },
   {
-    title: "AI Automation",
+    title: "ML Engineering",
     icon: mobile,
   },
   {
-    title: "LLM Development",
+    title: "Data Science",
     icon: backend,
   },
   {
-    title: "Data Intelligence",
+    title: "MLOps",
     icon: creator,
   },
 ];
@@ -76,76 +68,92 @@ const services = [
 const technologies = [
   {
     name: "Python",
-    icon: html,
+    icon: python,
   },
   {
     name: "PyTorch",
-    icon: css,
+    icon: pytorch,
   },
   {
-    name: "LangChain",
-    icon: javascript,
+    name: "TensorFlow",
+    icon: tensorflow,
   },
   {
-    name: "OpenAI",
-    icon: reactjs,
-  },
-  {
-    name: "Hugging Face",
-    icon: redux,
-  },
-  {
-    name: "Docker",
-    icon: gsap,
-  },
-  {
-    name: "Kubernetes",
-    icon: framer,
+    name: "TypeScript",
+    icon: typescript,
   },
   {
     name: "AWS",
     icon: aws,
   },
   {
-    name: "GCP Vertex AI",
-    icon: threejs,
-  },
-  {
-    name: "PostgreSQL",
-    icon: express,
-  },
-  {
-    name: "MongoDB",
+    name: "Pinecone",
     icon: mongodb,
-  },
-  {
-    name: "FastAPI",
-    icon: mui,
-  },
-  {
-    name: "Apache Spark",
-    icon: nodejs,
-  },
-  {
-    name: "TensorBoard",
-    icon: figma,
-  },
-  {
-    name: "LlamaIndex",
-    icon: tailwind,
   },
   {
     name: "Git",
     icon: git,
   },
+  {
+    name: "Docker",
+    icon: docker,
+  },
+  {
+    name: "Kubernetes",
+    icon: kubernetes,
+  },
+  {
+    name: "OpenAI",
+    icon: openai,
+  },
+  {
+    name: "Hugging Face",
+    icon: huggingface,
+  },
+  {
+    name: "LangGraph",
+    icon: langchain,
+  },
+  {
+    name: "FastAPI",
+    icon: fastapi,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+  },
+  {
+    name: "Apache Spark",
+    icon: apache_spark,
+  },
+  {
+    name: "Vertex AI",
+    icon: vertex_ai,
+  },
 ];
 
 const experiences = [
   {
+    title: "Data Scientist",
+    company_name: "AI Innovations Inc",
+    location: "San Francisco, CA",
+    icon: tekisky,
+    iconBg: "#666666",
+    date: "Jan 2018 - Dec 2018",
+    points: [
+      "📊 Analyzed large datasets to extract meaningful insights and patterns.",
+      "🤖 Developed predictive models using machine learning algorithms.",
+      "📈 Created data visualizations and reports for stakeholders.",
+      "🔬 Conducted statistical analysis and hypothesis testing.",
+    ],
+    position: "right"
+  },
+  {
     title: "Senior ML Engineer",
     company_name: "Grand View Research US",
+    location: "New York, NY",
     icon: tekisky,
-    iconBg: "#383E56",
+    iconBg: "#666666",
     date: "Sep 2020 - Dec 2023",
     points: [
       "🚀 Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket and training deep learning models with hyperparameter tuning (PyTorch) and monitoring (via TensorBoard).",
@@ -155,9 +163,39 @@ const experiences = [
       "📈 Designed automated Facebook ad system with GPT-3, boosting engagement rates by 35%.",
       "🎯 Developed customer segmentation using K-Means clustering with Python and Scikit-learn, improving marketing effectiveness by 20%.",
     ],
+    position: "left"
+  },
+  {
+    title: "ML Engineer",
+    company_name: "TechCorp Solutions",
+    location: "Seattle, WA",
+    icon: tekisky,
+    iconBg: "#666666",
+    date: "Jan 2019 - Aug 2020",
+    points: [
+      "🔬 Developed machine learning models for predictive analytics and data insights.",
+      "📊 Implemented data preprocessing pipelines and feature engineering workflows.",
+      "🤖 Built and deployed ML models for production environments.",
+      "📈 Collaborated with cross-functional teams to deliver data-driven solutions.",
+    ],
+    position: "left"
+  },
+  {
+    title: "Research Intern",
+    company_name: "University Lab",
+    location: "Boston, MA",
+    icon: tekisky,
+    iconBg: "#666666",
+    date: "Jun 2017 - Dec 2017",
+    points: [
+      "🔬 Conducted research on machine learning algorithms and neural networks.",
+      "📚 Published research papers on deep learning applications.",
+      "🎓 Collaborated with professors and graduate students on research projects.",
+      "💡 Developed innovative solutions for complex computational problems.",
+    ],
+    position: "right"
   },
 ];
-
 
 const projects = [
   {
@@ -167,24 +205,25 @@ const projects = [
     tags: [
       {
         name: "LangChain",
-        color: "blue-text-gradient",
+        color: "text-primary",
       },
       {
         name: "OpenAI",
-        color: "white-text-gradient",
+        color: "text-secondary",
       },
       {
         name: "Python",
-        color: "pink-text-gradient",
+        color: "text-accent",
       },
       {
         name: "RAG",
-        color: "green-text-gradient",
+        color: "text-primary-light",
       },
     ],
     image: project2,
     source_code_link: "https://github.com/ayush1330/ai-research-assistant",
     live_demo_link: "https://ai-assistant-demo.vercel.app",
+    buttonType: "Live Demo",
     impact: "Reduced research time by 60% for 50+ users",
   },
   {
@@ -194,24 +233,25 @@ const projects = [
     tags: [
       {
         name: "PyTorch",
-        color: "blue-text-gradient",
+        color: "text-primary",
       },
       {
         name: "TensorBoard",
-        color: "green-text-gradient",
+        color: "text-primary-light",
       },
       {
         name: "AWS S3",
-        color: "pink-text-gradient",
+        color: "text-accent",
       },
       {
         name: "Python",
-        color: "white-text-gradient",
+        color: "text-secondary",
       },
     ],
     image: gearXpert,
     source_code_link: "https://github.com/ayush1330/auto-ml-platform",
     live_demo_link: "https://auto-ml-demo.vercel.app",
+    buttonType: "Case Study",
     impact: "Reduced model deployment time by 80%",
   },
   {
@@ -221,24 +261,25 @@ const projects = [
     tags: [
       {
         name: "OpenAI",
-        color: "blue-text-gradient",
+        color: "text-primary",
       },
       {
         name: "Llama 3",
-        color: "white-text-gradient",
+        color: "text-secondary",
       },
       {
         name: "GCP Vertex AI",
-        color: "green-text-gradient",
+        color: "text-primary-light",
       },
       {
         name: "Python",
-        color: "pink-text-gradient",
+        color: "text-accent",
       },
     ],
     image: project3,
     source_code_link: "https://github.com/ayush1330/synthetic-data-generator",
     live_demo_link: "https://synthetic-data-demo.vercel.app",
+    buttonType: "Case Study",
     impact: "Generated 1M+ synthetic records for ML training",
   },
 ];

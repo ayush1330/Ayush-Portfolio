@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { FaGithub, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
 import { styles } from "../styles";
@@ -19,6 +18,24 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
+
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'work', 'contact'];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        const sectionTitle = currentSection === 'home' ? 'Home' : 
+                           currentSection === 'work' ? 'Work' : 
+                           currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
+        setActive(sectionTitle);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,85 +43,146 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (sectionId, sectionTitle) => {
+    setActive(sectionTitle);
+    setToggle(false); // Close mobile menu
+    
+    // Smooth scroll to section
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 ${
+        scrolled ? "bg-primary/95 backdrop-blur-sm border-b border-lightGrey/20" : "bg-transparent"
       }`}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <div className='flex items-center gap-4'>
+      <div className='w-full flex justify-between items-center max-w-6xl mx-auto'>
+        
+        {/* Logo/Brand - Now on the left */}
+        <div className='flex items-center'>
+          <button 
+            onClick={() => handleNavClick('home', 'Home')}
+            className="text-lightGrey font-semibold text-sm hover:text-white hover:scale-102 transition-all duration-200"
+          >
+             GET IN TOUCH
+          </button>
+        </div>
+
+        {/* Desktop Navigation */}
+        <ul className='list-none hidden md:flex flex-row gap-8'>
+          {navLinks.map((nav) => (
+            <li key={nav.id}>
+              <button 
+                onClick={() => handleNavClick(nav.id, nav.title)}
+                className={`${
+                  active === nav.title 
+                    ? "text-white border-b-2 border-lightGrey" 
+                    : "text-lightGrey hover:text-white"
+                } text-base font-medium pb-1 transition-all duration-200`}
+              >
+                {nav.title}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* Social Links */}
+        <div className='hidden md:flex items-center gap-4'>
           <a
             href="https://github.com/ayush1330"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-secondary transition-colors"
+            className="text-lightGrey hover:text-white transition-colors duration-200"
           >
-            <FaGithub size={20} />
+            <FaGithub size={18} />
           </a>
           <a
             href="https://x.com/ayushrajput08?s=09"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-secondary transition-colors"
+            className="text-lightGrey hover:text-white transition-colors duration-200"
           >
-            <FaXTwitter size={20} />
+            <FaXTwitter size={18} />
           </a>
           <a
             href="https://www.linkedin.com/in/ayush-singh-1330c/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-secondary transition-colors"
+            className="text-lightGrey hover:text-white transition-colors duration-200"
           >
-            <FaLinkedin size={20} />
+            <FaLinkedin size={18} />
           </a>
         </div>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
-
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        {/* Mobile Menu Button */}
+        <div className='md:hidden flex items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'
-            className='w-[28px] h-[28px] object-contain'
+            className='w-6 h-6 object-contain cursor-pointer'
             onClick={() => setToggle(!toggle)}
           />
+        </div>
+      </div>
 
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
+      {/* Mobile Menu */}
+      <div
+        className={`${
+          !toggle ? "hidden" : "flex"
+        } md:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-sm border-b border-lightGrey/20 shadow-lg`}
+      >
+        <div className="w-full px-6 py-4">
+          <ul className='list-none flex flex-col gap-4'>
+            {navLinks.map((nav) => (
+              <li key={nav.id}>
+                <button 
+                  onClick={() => handleNavClick(nav.id, nav.title)}
+                  className={`${
+                    active === nav.title 
+                      ? "text-white border-l-2 border-lightGrey pl-2" 
+                      : "text-lightGrey hover:text-white"
+                  } text-base font-medium block py-2 transition-all duration-200 text-left`}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
+                  {nav.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+          
+          {/* Mobile Social Links */}
+          <div className='flex items-center gap-4 mt-4 pt-4 border-t border-accent/10'>
+            <a
+              href="https://github.com/ayush1330"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lightGrey hover:text-white transition-colors duration-200"
+            >
+              <FaGithub size={18} />
+            </a>
+            <a
+              href="https://x.com/ayushrajput08?s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lightGrey hover:text-white transition-colors duration-200"
+            >
+              <FaXTwitter size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ayush-singh-1330c/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lightGrey hover:text-white transition-colors duration-200"
+            >
+              <FaLinkedin size={18} />
+            </a>
           </div>
         </div>
       </div>

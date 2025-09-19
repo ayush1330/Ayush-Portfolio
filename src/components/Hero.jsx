@@ -1,49 +1,42 @@
-import { motion } from "framer-motion";
-
 import { styles } from "../styles";
+import { rockTexture } from "../assets";
+import OptimizedImage from "./OptimizedImage";
 
 const Hero = () => {
-
-  
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-      <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-      >
-        <div className='flex flex-col justify-center items-center mt-28 md:mt-5 lg:5'>
-          <div className='w-5 h-5 rounded-full bg-[#00d4ff]' />
-          <div className='w-1 sm:h-80 h-40 ai-gradient' />
-        </div>
-
-        <div className="mt-28 md:mt-5 lg:5">
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#00d4ff]'>Ayush</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I'm a people person from a small town, with a big-picture mindset. <br/>
-            My passion lies in Agentic AI application, coupled with a dash of common sense, <br/>
-            to craft simple yet effective solutions for complex problems. <br/>
-            Working hard to better myself everyday and will take on every project I have time for.
-          </p>
-        </div>
+    <section id="home" className="relative w-full min-h-screen flex flex-col justify-center items-center py-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <OptimizedImage
+          src={rockTexture}
+          alt="Background image"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/50"></div>
       </div>
+      
+      {/* Main Content Container */}
+      <div className={`relative z-10 w-full max-w-7xl mx-auto ${styles.paddingX} flex flex-col justify-center items-center`}>
+        
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
+        {/* Hero Content */}
+        <div className="flex-1 text-center max-w-3xl">
+          <div className="space-y-12">
+            <h1 className={`${styles.heroHeadText} leading-tight animate-fade-in-up`} style={{ animationDelay: '0.1s', color: '#9CA3AF' }}>
+              Hi, I'm <span className='text-blue-300'>Ayush</span>
+            </h1>
+            
+            <div className="space-y-4">
+              <p className={`${styles.heroSubText} leading-relaxed animate-fade-in-up`} style={{ animationDelay: '0.3s' }}>
+                
+              </p>
+              
+              <p className={`${styles.heroSubText} ${styles.light} leading-relaxed animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
+                I'm a people person from a small town, with a big-picture mindset. My passion lies in Agentic AI application, coupled with a dash of common sense, to craft simple yet effective solutions for complex problems, Working hard to better myself everyday and will take on every project I have time for.
+              </p>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </section>
   );

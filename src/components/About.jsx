@@ -1,93 +1,43 @@
-import React, { useRef, useEffect } from "react";
-import { Tilt } from "react-tilt";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import React from "react";
 import { styles } from "../styles";
-import { services } from "../constants";
+import { secondTestimonial } from "../assets";
 import { SectionWrapper } from "../hoc";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const useGsap = (elementRef, animation, delay = 0) => {
-  useEffect(() => {
-    if (elementRef.current) {
-      gsap.fromTo(
-        elementRef.current,
-        animation.from,
-        {
-          ...animation.to,
-          delay,
-          scrollTrigger: {
-            trigger: elementRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }, [elementRef, animation, delay]);
-};
-
-const ServiceCard = ({ index, title, icon }) => {
-  const cardRef = useRef(null);
-  useGsap(cardRef, {
-    from: { opacity: 0, y: 100, scale: 0.8 },
-    to: { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" },
-  }, index * 0.2);
-
-  return (
-    <Tilt className="xs:w-[250px] w-full">
-      <div ref={cardRef} className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
-        <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-          <img src={icon} alt="web-development" className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
-        </div>
-      </div>
-    </Tilt>
-  );
-};
+import ScrollAnimation from "./ScrollAnimation";
+import OptimizedImage from "./OptimizedImage";
 
 const About = () => {
-  const headingRef = useRef(null);
-  const paragraphRef = useRef(null);
-
-  // Heading Animation
-  useGsap(headingRef, {
-    from: { opacity: 0, x: -50 },
-    to: { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-  });
-
-  // Paragraph Animation
-  useGsap(paragraphRef, {
-    from: { opacity: 0, y: 50 },
-    to: { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
-  }, 0.3);
-
   return (
     <>
-      <div ref={headingRef}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </div>
+      <ScrollAnimation>
+        <div className="mb-3">
+          <p className={styles.heading2}>Introduction</p>
+        </div>
+      </ScrollAnimation>
 
-      <p ref={paragraphRef} className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, 
-        and business intelligence, specializing in large language models (LLMs), agentic 
-        workflows, and data-driven product development. 
-        
-        🚀 Proven success in building multi-agent systems and LLM-powered automation 
-        pipelines that improve operational efficiency by 80% and boost user engagement by 35%.
-        
-        💡 Expert in deploying AI solutions using LangChain, Hugging Face, and cloud-native 
-        tools across domains including education tech, market research, and digital marketing.
-      </p>
+      {/* Professional Photo and Introduction */}
+      <ScrollAnimation delay={200}>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16">
+        {/* Professional Photo */}
+        <div className="flex-shrink-0 w-full lg:w-auto">
+          <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto lg:mx-0 rounded-lg overflow-hidden border-2 border-accent/10 shadow-sm">
+            <OptimizedImage
+              src={secondTestimonial}
+              alt="Ayush Singh - Professional Headshot"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-10">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
-      </div>
+        {/* Main Introduction Text */}
+        <div className="flex-1 space-y-6">
+          <p className={`${styles.lead} leading-relaxed`}>
+            Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, 
+            and business intelligence, specializing in large language models (LLMs), agentic 
+            workflows, and data-driven product development.
+          </p>
+        </div>
+        </div>
+      </ScrollAnimation>
     </>
   );
 };
