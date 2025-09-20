@@ -25,7 +25,7 @@ const ProjectCard = ({
             <img src={github} alt="GitHub" className="w-4 h-4" />
             Code
           </button>
-          {live_demo_link && (
+          {false && live_demo_link && (
             <button
               onClick={() => window.open(live_demo_link, "_blank")}
               className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 hover:scale-105 transition-all duration-200 text-sm font-medium shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2"
@@ -75,7 +75,7 @@ const Works = () => {
         <div className="mb-12">
           <p className="typography-body text-accent max-w-3xl leading-relaxed">
             Following projects showcase my skills and experience through real-world examples of my work. 
-            Each project is briefly described with links to code repositories and live demos. It reflects 
+            Each project is briefly described with links to code repositories. It reflects 
             my ability to solve complex problems, work with different technologies, and manage projects effectively.
           </p>
         </div>

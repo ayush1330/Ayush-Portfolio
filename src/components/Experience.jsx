@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience, index }) => {
     >
       <div className="flex justify-between items-start">
         <div className="flex flex-col">
-          <h3 className='text-secondary text-[22px] font-bold mb-2' style={{ margin: 0 }}>
+          <h3 className='text-secondary text-[16px] font-bold mb-2' style={{ margin: 0 }}>
             {experience.title}
           </h3>
           <div className="flex items-center gap-2">
@@ -70,10 +70,10 @@ const Experience = () => {
 
       <ScrollAnimation delay={100}>
         <div className="flex justify-center gap-20 mb-8">
-          <button className="px-6 py-3 bg-white/5 text-body typography-h4 font-medium hover:bg-white/10 transition-all duration-300 rounded-lg">
+          <button className="px-6 py-3 bg-white/5 text-body text-sm font-medium hover:bg-white/10 transition-all duration-300 rounded-lg">
             EXPERIENCE
           </button>
-          <button className="px-6 py-3 bg-white/5 text-body typography-h4 font-medium hover:bg-white/10 transition-all duration-300 rounded-lg">
+          <button className="px-6 py-3 bg-white/5 text-body text-sm font-medium hover:bg-white/10 transition-all duration-300 rounded-lg">
             EDUCATION
           </button>
         </div>

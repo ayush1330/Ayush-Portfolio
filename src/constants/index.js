@@ -134,27 +134,27 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Data Scientist",
-    company_name: "AI Innovations Inc",
-    location: "San Francisco, CA",
+    title: "MSc. Data Science",
+    company_name: "IU Hochschule",
+    location: "Berlin, DE",
     icon: tekisky,
     iconBg: "#666666",
-    date: "Jan 2018 - Dec 2018",
+    date: "APR 2023 - APR 2025",
     points: [
-      "📊 Analyzed large datasets to extract meaningful insights and patterns.",
-      "🤖 Developed predictive models using machine learning algorithms.",
-      "📈 Created data visualizations and reports for stakeholders.",
-      "🔬 Conducted statistical analysis and hypothesis testing.",
+      "📊 Master's degree in Data Science with a focus on AI and Machine Learning.",
+      "🤖 Specialized in LLMs, RAG, and Agentic workflows.",
+      "📈 Developed end-to-end solutions for data-driven products.",
+      "🔬 Conducted research on LLMs and Agentic workflows.",
     ],
     position: "right"
   },
   {
     title: "Senior ML Engineer",
-    company_name: "Grand View Research US",
-    location: "New York, NY",
+    company_name: "Grand View Research",
+    location: "San Francisco, CA",
     icon: tekisky,
     iconBg: "#666666",
-    date: "Sep 2020 - Dec 2023",
+    date: "Jan 2022 - Dec 2023",
     points: [
       "🚀 Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket and training deep learning models with hyperparameter tuning (PyTorch) and monitoring (via TensorBoard).",
       "🤖 Developed AI Image Culling software, implementing face quality algorithm (MediaPipe) and removing duplicates, blurriness, background removal and blinking images.",
@@ -167,11 +167,11 @@ const experiences = [
   },
   {
     title: "ML Engineer",
-    company_name: "TechCorp Solutions",
-    location: "Seattle, WA",
+    company_name: "Grand View Research",
+    location: "San Francisco, CA",
     icon: tekisky,
     iconBg: "#666666",
-    date: "Jan 2019 - Aug 2020",
+    date: "Sep 2020 - Dec 2021",
     points: [
       "🔬 Developed machine learning models for predictive analytics and data insights.",
       "📊 Implemented data preprocessing pipelines and feature engineering workflows.",
@@ -181,12 +181,12 @@ const experiences = [
     position: "left"
   },
   {
-    title: "Research Intern",
-    company_name: "University Lab",
-    location: "Boston, MA",
+    title: "BTech. ECE",
+    company_name: "JIIT",
+    location: "Noida, IN",
     icon: tekisky,
     iconBg: "#666666",
-    date: "Jun 2017 - Dec 2017",
+    date: "July 2016 - July 2020",
     points: [
       "🔬 Conducted research on machine learning algorithms and neural networks.",
       "📚 Published research papers on deep learning applications.",
@@ -199,88 +199,92 @@ const experiences = [
 
 const projects = [
   {
-    name: "AI Research Assistant with RAG & Agents",
+    name: "AI Podcast Generator",
     description:
-      "Developed a smart assistant using LangChain, LangGraph, OpenAI LLMs, and vector search to answer complex queries with agent-based reasoning and document retrieval. Built custom workflows with LlamaIndex and ReAct agents.",
+      "An multi-agent application that creates personalized podcast content using advanced language models and text-to-speech technology. Built with LangGraph, it integrates various AI components to generate engaging podcast episodes.",
     tags: [
       {
-        name: "LangChain",
+        name: "Agents",
         color: "text-primary",
       },
       {
-        name: "OpenAI",
+        name: "LangGraph",
         color: "text-secondary",
       },
       {
-        name: "Python",
+        name: "OpenAI",
         color: "text-accent",
       },
       {
-        name: "RAG",
+        name: "TTS",
+        color: "text-primary-light",
+      },
+      {
+        name: "FAISS",
         color: "text-primary-light",
       },
     ],
     image: project2,
-    source_code_link: "https://github.com/ayush1330/ai-research-assistant",
-    live_demo_link: "https://ai-assistant-demo.vercel.app",
+    source_code_link: "https://github.com/ayush1330/ai_podcast",
+    live_demo_link: "",
     buttonType: "Live Demo",
-    impact: "Reduced research time by 60% for 50+ users",
+    impact: "Generated personalized podcast content for enhanced user engagement",
   },
   {
-    name: "Auto ML Orchestration Platform",
+    name: "LlamaIndex DynamicK Agent",
     description:
-      "Created End-to-End Auto ML orchestration Platform with UI, enabling data upload from S3 bucket, training deep learning models with hyperparameter tuning (PyTorch) and monitoring via TensorBoard.",
+      "Developed an agentic application utilizing the LlamaIndex framework to dynamically adjust the number of retrieved chunks (k) in Retrieval-Augmented Generation (RAG) systems. This approach optimizes context window sizing based on query complexity, enhancing response accuracy and efficiency.",
     tags: [
       {
-        name: "PyTorch",
+        name: "LlamaIndex",
         color: "text-primary",
       },
       {
-        name: "TensorBoard",
-        color: "text-primary-light",
+        name: "RAG",
+        color: "text-secondary",
       },
       {
-        name: "AWS S3",
+        name: "Python",
         color: "text-accent",
       },
       {
-        name: "Python",
-        color: "text-secondary",
+        name: "Agents",
+        color: "text-primary-light",
       },
     ],
     image: gearXpert,
-    source_code_link: "https://github.com/ayush1330/auto-ml-platform",
-    live_demo_link: "https://auto-ml-demo.vercel.app",
+    source_code_link: "https://github.com/ayush1330/LlamaIndex-DynamicK-Agent",
+    live_demo_link: "",
     buttonType: "Case Study",
-    impact: "Reduced model deployment time by 80%",
+    impact: "Improved response accuracy by 30%, enhanced computational efficiency",
   },
   {
-    name: "Synthetic Data Generator with LLMs",
+    name: "Synthetic Data for LLM Reasoning",
     description:
-      "Built a tool using OpenAI's LLMs to generate schema-aligned synthetic data with label conditioning for ML model training. Deployed Llama 3 90b model on Google Vertex AI for domain-specific synthetic data generation.",
+      "Built a Python framework using MuSR methodology to generate synthetic tax law cases and evaluate LLM reasoning capabilities. Created scenarios to assess model performance in specialized domains.",
     tags: [
       {
-        name: "OpenAI",
+        name: "Python",
         color: "text-primary",
       },
       {
-        name: "Llama 3",
+        name: "MuSR",
         color: "text-secondary",
       },
       {
-        name: "GCP Vertex AI",
+        name: "LLM Reasoning",
         color: "text-primary-light",
       },
       {
-        name: "Python",
+        name: "Synthetic Data",
         color: "text-accent",
       },
     ],
     image: project3,
-    source_code_link: "https://github.com/ayush1330/synthetic-data-generator",
-    live_demo_link: "https://synthetic-data-demo.vercel.app",
+    source_code_link: "https://github.com/ayush1330/LLM-Reasoning-Model-Synthetic-data",
+    live_demo_link: "",
     buttonType: "Case Study",
-    impact: "Generated 1M+ synthetic records for ML training",
+    impact: "Generated 500+ tax scenarios, improved reasoning accuracy by 25%",
   },
 ];
 

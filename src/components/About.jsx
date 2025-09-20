@@ -30,11 +30,19 @@ const About = () => {
 
         {/* Main Introduction Text */}
         <div className="flex-1 space-y-6">
-          <p className={`${styles.lead} leading-relaxed`}>
-            Results-driven Machine Learning Engineer with 4+ years of experience in AI, NLP, 
-            and business intelligence, specializing in large language models (LLMs), agentic 
-            workflows, and data-driven product development.
-          </p>
+          <div className={`${styles.lead} leading-relaxed space-y-4`}>
+            <p>
+              Machine Learning Engineer with 4+ years of experience building generative AI and agentic systems that don't just respond — they act with purpose. I design and deploy LLM-powered agents that solve complex problems through clean, scalable architecture — always grounded in product vision and user insight.
+            </p>
+            
+            <p>
+              I care deeply about intuitive systems, long-term thinking, and AI that blends seamlessly into how people actually work. For me, it's not just about functionality — it's about building tech that feels right and lasts.
+            </p>
+            
+            <p>
+              Beyond code, I'm usually chasing music, hikes, or the mysteries of consciousness and the quantum world. Because hey—why stop at intelligent systems when you can explore intelligent existence?
+            </p>
+          </div>
         </div>
         </div>
       </ScrollAnimation>
