@@ -51,14 +51,40 @@ const Navbar = () => {
     setActive(sectionTitle);
     setToggle(false); // Close mobile menu
     
-    // Smooth scroll to section
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+    // Special handling for contact section
+    if (sectionId === 'contact') {
+      // For contact, scroll to the bottom of the page since it's the last section
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTo = documentHeight - windowHeight;
+      
       window.scrollTo({
-        top: offsetTop,
+        top: scrollTo,
         behavior: 'smooth'
       });
+      return;
+    }
+    
+    // Function to scroll to element
+    const scrollToElement = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+        return true;
+      }
+      return false;
+    };
+
+    // Try to scroll immediately
+    if (!scrollToElement()) {
+      // If element not found (might be lazy loaded), wait a bit and try again
+      setTimeout(() => {
+        scrollToElement();
+      }, 100);
     }
   };
 
