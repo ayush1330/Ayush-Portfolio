@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -47,22 +48,17 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (sectionId, sectionTitle) => {
-    console.log('Navigating to:', sectionId, sectionTitle);
     setActive(sectionTitle);
     setToggle(false); // Close mobile menu
     
     // Smooth scroll to section
     const element = document.getElementById(sectionId);
-    console.log('Element found:', element);
     if (element) {
       const offsetTop = element.offsetTop - 80; // Account for fixed navbar
-      console.log('Scrolling to:', offsetTop);
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
       });
-    } else {
-      console.error('Element not found for ID:', sectionId);
     }
   };
 
@@ -77,10 +73,11 @@ const Navbar = () => {
         {/* Logo/Brand - Now on the left */}
         <div className='flex items-center'>
           <button 
-            onClick={() => handleNavClick('contact', 'Contact')}
-            className="text-lightGrey font-semibold text-sm hover:text-white hover:scale-102 transition-all duration-200"
+            onClick={() => handleNavClick('home', 'Home')}
+            className="text-lightGrey hover:text-white hover:scale-110 transition-all duration-200 p-2"
+            title="Home"
           >
-             GET IN TOUCH
+            <FaHome size={20} />
           </button>
         </div>
 
