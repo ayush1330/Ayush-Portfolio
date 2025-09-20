@@ -20,7 +20,7 @@ const Navbar = () => {
       }
 
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'work', 'contact'];
+      const sections = ['home', 'about', 'work', 'projects', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -33,6 +33,9 @@ const Navbar = () => {
       if (currentSection) {
         const sectionTitle = currentSection === 'home' ? 'Home' : 
                            currentSection === 'work' ? 'Work' : 
+                           currentSection === 'projects' ? 'Projects' :
+                           currentSection === 'about' ? 'About' :
+                           currentSection === 'contact' ? 'Contact' :
                            currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
         setActive(sectionTitle);
       }
@@ -44,17 +47,22 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (sectionId, sectionTitle) => {
+    console.log('Navigating to:', sectionId, sectionTitle);
     setActive(sectionTitle);
     setToggle(false); // Close mobile menu
     
     // Smooth scroll to section
     const element = document.getElementById(sectionId);
+    console.log('Element found:', element);
     if (element) {
       const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+      console.log('Scrolling to:', offsetTop);
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
       });
+    } else {
+      console.error('Element not found for ID:', sectionId);
     }
   };
 
@@ -69,7 +77,7 @@ const Navbar = () => {
         {/* Logo/Brand - Now on the left */}
         <div className='flex items-center'>
           <button 
-            onClick={() => handleNavClick('home', 'Home')}
+            onClick={() => handleNavClick('contact', 'Contact')}
             className="text-lightGrey font-semibold text-sm hover:text-white hover:scale-102 transition-all duration-200"
           >
              GET IN TOUCH
