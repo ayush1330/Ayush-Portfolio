@@ -32,7 +32,7 @@ const About = () => {
         <div className="flex-1 space-y-6">
           <div className={`${styles.lead} leading-relaxed space-y-4`}>
             <p>
-              Machine Learning Engineer with 4+ years of experience building generative AI and agentic systems that don't just respond — they act with purpose. I design and deploy LLM-powered agents that solve complex problems through clean, scalable architecture — always grounded in product vision and user insight.
+              Machine Learning Engineer with 4+ years of experience, building generative AI and agentic systems that don't just respond — they act with purpose. I design and deploy LLM-powered agents that solve complex problems through clean, scalable architecture — always grounded in product vision and user insight.
             </p>
             
             <p>
@@ -40,7 +40,7 @@ const About = () => {
             </p>
             
             <p>
-              Beyond code, I'm usually chasing music, hikes, or the mysteries of consciousness and the quantum world. Because hey—why stop at intelligent systems when you can explore intelligent existence?
+              Beyond code, I'm usually chasing music, hikes, or the mysteries of consciousness and the quantum world.
             </p>
           </div>
         </div>
