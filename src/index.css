@@ -210,11 +210,11 @@ body {
 }
 
 .typography-lead {
-  font-family: "Inter", sans-serif;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.5;
-  color: #8C8C8C; /* Blue for lead text */
+  color: #8C8C8C; /* Light grey for paragraphs */
   margin-bottom: 1.25rem;
 }
 
