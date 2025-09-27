@@ -138,6 +138,21 @@ const technologies = [
 
 const experiences = [
   {
+    title: "AI Engineer",
+    company_name: "TECHCOSPACE",
+    location: "UK",
+    icon: tekisky,
+    iconBg: "#666666",
+    date: "Jul 2024 - Aug 2025",
+    points: [
+      "🤖 Designed custom retrieval workflows with agent for dynamic chunking; improved query processing efficiency by 40%.",
+      "⚡ Fine-tuned 442M parameter models on Vertex AI, optimizing performance for specialized domain tasks.",
+      "🔧 Implemented advanced RAG systems with dynamic context window management.",
+      "📊 Developed agentic workflows for automated data processing and analysis.",
+    ],
+    position: "left"
+  },
+  {
     title: "MSc. Data Science",
     company_name: "IU Hochschule",
     location: "Berlin, DE",
